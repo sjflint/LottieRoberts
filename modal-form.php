@@ -21,5 +21,5 @@
 
   mail($to,$email_subject,$email_body,$headers);
 
-  header("Location: success.html");
+  header("Location: success.html")
 ?>
