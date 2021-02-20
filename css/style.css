@@ -1,1 +1,244 @@
-*{font-family:"Lato", sans-serif}body{margin-top:40px}img{width:100%;border-radius:5px;border:2px solid #dfabbe}a{color:#000}.bg-black{background:#000}.iphones a{color:#000 !important}.navbar img{max-width:250px}#navbar-nav a{font-size:1.2rem}#showcase{margin-top:50px;text-align:center;min-height:670px;background:url(/img/IMG_0356.JPG) no-repeat center center/cover}#showcase .container{height:670px;color:#ccc;position:relative}#showcase .btn{font-size:1.2rem;padding:0.5rem 1rem}#showcase h1{border:solid 2px #dfabbe;border-radius:2px;padding:1.5rem;margin-top:5rem}#showcase #brides-up-north{width:150px}.section-title{border-bottom:2px solid #dfabbe}.section-title-secondary{border-bottom:2px solid #b6bad4}.carousel{margin:auto}#services .btn{border-top-left-radius:0px;border-top-right-radius:0px;font-size:1.5rem;font-weight:bold}#services .services-img{position:relative}#services img{border-radius:0px}#services .image-text{font-size:2rem;color:#dfabbe;text-align:center;position:absolute;top:45%}#services .image-text:hover{opacity:1 !important}#about .container{margin-top:60px}#about .image{height:100%;display:flex;align-items:center;justify-content:center}#about img{border:2px solid #b6bad4;width:250px}#about p{line-height:1.5rem}.overlay{position:absolute;min-height:600px;width:100%;background:rgba(0,0,0,0.6)}.btn-secondary{color:#fff}#testimonials{height:380px;position:relative}#testimonials .carousel{position:absolute;margin:5px auto 0 auto;top:35%;right:1%;width:100%}#testimonials img{width:150px}#services h4{font-size:1.2rem}#yws-image{width:300px}.overlay-image-none{transition:opacity 1s ease-in;opacity:1}.overlay-image-hide{transition:opacity 1s ease-in;opacity:0.4}.image-tagline{opacity:0;transition:opacity 1s ease-in}.tagline-show{opacity:1;transition:opacity 1s ease-in}.error{background:#ff0000;color:#fff;text-align:center}.hidden{display:none}#webdesignlogo{width:180px;border:none}.affiliates{align-items:center;justify-content:space-around}.affiliates img{width:200px !important}@media (max-width: 800px){.affiliates{flex-direction:column}}@media (max-width: 500px){#showcase{min-height:780px}#showcase .container{min-height:780px}.carousel-item .carousel-caption{background:none;border:none}.carousel-item h3{display:none}#testimonials{height:500px}#testimonials .carousel{font-size:0.8rem}#testimonials .carousel img{width:25%}#contact-me{flex-direction:column}#contact-me div{margin-bottom:15px}}
+* {
+  font-family: "Lato", sans-serif;
+}
+
+body {
+  margin-top: 40px;
+}
+
+img {
+  width: 100%;
+  border-radius: 5px;
+  border: 2px solid #dfabbe;
+}
+
+a {
+  color: #000;
+}
+
+.bg-black {
+  background: #000;
+}
+
+.iphones a {
+  color: #000 !important;
+}
+
+.navbar img {
+  max-width: 250px;
+}
+
+#navbar-nav a {
+  font-size: 1.2rem;
+}
+
+#showcase {
+  position: relative;
+  margin-top: 50px;
+  text-align: center;
+  min-height: 670px;
+  background: url(/img/IMG_0356.JPG) no-repeat center center/cover;
+}
+
+#showcase .container {
+  height: 670px;
+  color: #ccc;
+}
+
+.overlay {
+  position: absolute;
+  min-height: 670px;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background: rgba(black, 0.6);
+}
+
+#showcase .btn {
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+}
+
+#showcase h1 {
+  border: solid 2px #dfabbe;
+  border-radius: 2px;
+  padding: 1.5rem;
+  margin-top: 5rem;
+}
+
+#showcase #brides-up-north {
+  width: 150px;
+}
+
+.section-title {
+  border-bottom: 2px solid #dfabbe;
+}
+.section-title-secondary {
+  border-bottom: 2px solid #b6bad4;
+}
+
+.carousel {
+  margin: auto;
+}
+
+#services .btn {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#services .services-img {
+  position: relative;
+}
+
+#services img {
+  border-radius: 0px;
+}
+
+#services .image-text {
+  font-size: 2rem;
+  color: #dfabbe;
+  text-align: center;
+  position: absolute;
+  top: 45%;
+}
+
+#services .image-text:hover {
+  opacity: 1 !important;
+}
+
+#about .container {
+  margin-top: 60px;
+}
+
+#about .image {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#about img {
+  border: 2px solid #b6bad4;
+  width: 250px;
+}
+
+#about p {
+  line-height: 1.5rem;
+}
+
+.btn-secondary {
+  color: #fff;
+}
+
+#testimonials {
+  height: 380px;
+  position: relative;
+}
+#testimonials .carousel {
+  position: absolute;
+  margin: 5px auto 0 auto;
+  top: 35%;
+  right: 1%;
+  width: 100%;
+}
+
+#testimonials img {
+  width: 150px;
+}
+
+#services h4 {
+  font-size: 1.2rem;
+}
+
+#yws-image {
+  width: 300px;
+}
+
+.overlay-image-none {
+  transition: opacity 1s ease-in;
+  opacity: 1;
+}
+.overlay-image-hide {
+  transition: opacity 1s ease-in;
+  opacity: 0.4;
+}
+
+.image-tagline {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+.tagline-show {
+  opacity: 1;
+  transition: opacity 1s ease-in;
+}
+
+/* Javascript classes */
+
+.error {
+  background: #ff0000;
+  color: #fff;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+#webdesignlogo {
+  width: 180px;
+  border: none;
+}
+
+.affiliates {
+  align-items: center;
+  justify-content: space-around;
+}
+
+.affiliates-img {
+  width: 200px !important;
+}
+
+@media (max-width: 800px) {
+  .affiliates {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 500px) {
+  #showcase {
+    min-height: 780px;
+  }
+  #showcase .container {
+    min-height: 780px;
+  }
+
+  .carousel-item .carousel-caption {
+    background: none;
+    border: none;
+  }
+
+  .carousel-item h3 {
+    display: none;
+  }
+
+  #testimonials {
+    height: 500px;
+  }
+  #testimonials .carousel {
+    font-size: 0.8rem;
+  }
+  #testimonials img {
+    width: 25%;
+  }
+
+  #contact-me {
+    flex-direction: column;
+  }
+
+  #contact-me div {
+    margin-bottom: 15px;
+  }
+}
