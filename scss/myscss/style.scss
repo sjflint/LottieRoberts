@@ -12,8 +12,16 @@ img {
   border: 2px solid #dfabbe;
 }
 
-.crap-iphones a {
-  color: #fff !important;
+a {
+  color: #000;
+}
+
+.bg-black {
+  background: #000;
+}
+
+.iphones a {
+  color: #000 !important;
 }
 
 .navbar {
@@ -29,14 +37,15 @@ img {
 }
 
 #showcase {
-  margin-top: 60px;
+  margin-top: 50px;
   text-align: center;
-  min-height: 600px;
+  min-height: 670px;
   background: url(/img/IMG_0356.JPG) no-repeat center center/cover;
 
   .container {
-    height: 600px;
+    height: 670px;
     color: #ccc;
+    position: relative;
   }
 
   .btn {
@@ -49,6 +58,10 @@ img {
     border-radius: 2px;
     padding: 1.5rem;
     margin-top: 5rem;
+  }
+
+  #brides-up-north {
+    width: 150px;
   }
 }
 
@@ -75,27 +88,20 @@ img {
     position: relative;
   }
 
-  .image-overlay {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background: #000;
-    opacity: 0.6;
-    display: none;
-  }
   img {
     border-radius: 0px;
   }
 
   .image-text {
-    padding-top: 20%;
     font-size: 2rem;
     color: #dfabbe;
-    position: absolute;
     text-align: center;
-    width: 100%;
-    height: 100%;
-    display: none;
+    position: absolute;
+    top: 45%;
+  }
+
+  .image-text:hover {
+    opacity: 1 !important;
   }
 }
 
@@ -113,7 +119,7 @@ img {
 
   img {
     border: 2px solid #b6bad4;
-    width: 200px;
+    width: 250px;
   }
 
   p {
@@ -133,16 +139,12 @@ img {
 }
 
 #testimonials {
-  height: 600px;
+  height: 380px;
   position: relative;
-
-  .container {
-    margin-top: 60px;
-  }
 
   .carousel {
     position: absolute;
-    margin: 60px auto 0 auto;
+    margin: 5px auto 0 auto;
     top: 35%;
     right: 1%;
     width: 100%;
@@ -163,10 +165,23 @@ img {
   width: 300px;
 }
 
-#contact {
-  .container {
-    margin-top: 60px;
-  }
+.overlay-image-none {
+  transition: opacity 1s ease-in;
+  opacity: 1;
+}
+.overlay-image-hide {
+  transition: opacity 1s ease-in;
+  opacity: 0.4;
+}
+
+.image-tagline {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+.tagline-show {
+  opacity: 1;
+  transition: opacity 1s ease-in;
 }
 
 // Javascript classes
@@ -186,7 +201,28 @@ img {
   border: none;
 }
 
+.affiliates {
+  align-items: center;
+  justify-content: space-around;
+  img {
+    width: 200px !important;
+  }
+}
+
+@media (max-width: 800px) {
+  .affiliates {
+    flex-direction: column;
+  }
+}
+
 @media (max-width: 500px) {
+  #showcase {
+    min-height: 780px;
+    .container {
+      min-height: 780px;
+    }
+  }
+
   .carousel-item {
     .carousel-caption {
       background: none;
@@ -199,6 +235,7 @@ img {
   }
 
   #testimonials {
+    height: 500px;
     .carousel {
       font-size: 0.8rem;
       img {
