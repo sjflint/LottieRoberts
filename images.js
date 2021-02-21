@@ -7,10 +7,6 @@ document.body.addEventListener('mouseout', function(e) {
   }
 })
 
-// document.body.addEventListener('mouseout', function(e) {
-//   if(e.target.classList.contains('image-text'))
-// })
-
 document.body.addEventListener('mouseover', function(e) {
   if(e.target.classList.contains('overlay-image') || e.target.classList.contains('image-text')){
     e.target.classList.add('overlay-image-hide')

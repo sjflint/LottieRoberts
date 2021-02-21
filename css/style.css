@@ -67,7 +67,7 @@ a {
 }
 
 #brides-up-north {
-  width: 150px;
+  width: 150px !important;
 }
 
 .section-title {
@@ -240,5 +240,12 @@ a {
 
   #contact-me div {
     margin-bottom: 15px;
+  }
+
+  .image-tagline {
+    font-size: 12px !important;
+  }
+  .tagline-show {
+    font-size: 12px !important;
   }
 }
