@@ -36,12 +36,12 @@ a {
   position: relative;
   margin-top: 50px;
   text-align: center;
-  min-height: 670px;
+  min-height: 680px;
   background: url(/img/IMG_0356.JPG) no-repeat center center/cover;
 }
 
 #showcase .container {
-  height: 670px;
+  height: 680px;
   color: #ccc;
 }
 
@@ -133,7 +133,7 @@ a {
 }
 
 #testimonials {
-  height: 380px;
+  height: 440px;
   position: relative;
 }
 #testimonials .carousel {
@@ -204,6 +204,10 @@ a {
 @media (max-width: 800px) {
   .affiliates {
     flex-direction: column;
+  }
+
+  #testimonials {
+    height: 450px;
   }
 }
 
