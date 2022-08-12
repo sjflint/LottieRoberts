@@ -86,10 +86,6 @@ app.post("/contact-form", (req, res) => {
 // set static folder
 app.use(express.static(path.join(__dirname, "public")));
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
-
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
