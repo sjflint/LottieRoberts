@@ -28,12 +28,66 @@ app.post("/newsletter-form", (req, res) => {
       },
     });
 
+    const randomVoucherCode = Math.floor(1000 + Math.random() * 9000);
+    console.log(randomVoucherCode);
+
+    let output = `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div
+      style="
+        padding: 10px 0 10px 0;
+        max-width: 600px;
+
+        background: #b6bad4;
+        text-align: center;
+      "
+    >
+      <img
+        src="https://www.lottierobertsflowers.com/img/logo.jpg"
+        width="150"
+        alt="logo"
+      />
+    </div>
+    <div style="max-width: 600px; background: white">
+      <div style="padding: 10px">
+        <h4>Thank you for signing up to my newsletter</h4>
+        <p style="text-align: left">Dear ${req.body.name},</p>
+        <p>Thank you for signing up to my newsletter.</p>
+        <p>
+          Please quote the following code, and your name, when placing your
+          first order to receive a 10% discount:
+        </p>
+        <h5 style="text-align: center">CODE: ${randomVoucherCode}</h5>
+        <p>Kind Regards</p>
+        <p>Nicola</p>
+      </div>
+      <div
+        style="
+          padding: 5px 0 5px 0;
+          max-width: 600px;
+          color: #fff;
+          background: #b6bad4;
+          text-align: center;
+        "
+      >
+        <h5>Place an order: info@lottierobertsflowers.com | 07989 713 742</h5>
+      </div>
+    </div>
+  </body>
+</html>`;
+
+    console.log(req.body.email);
     let mailOptions = {
-      from: '"Lottie Roberts Flowers" <info@lottierobertsflowers.com>', // sender address
-      to: req.body.email, // list of receivers
-      subject: "Enquiry", // Subject line
-      text: "Lottie Roberts Flowers enquiry", // plain text body
-      html: "<h1>Form has been submitted</h1>", // html body
+      from: '"Lottie Roberts Flowers" <info@lottierobertsflowers.com>',
+      to: `${req.body.email}; info@lottierobertsflowers.com`,
+      subject: "Enquiry",
+      text: "Lottie Roberts Flowers Newsletter",
+      html: output,
     };
 
     // send mail with defined transport object
@@ -64,12 +118,66 @@ app.post("/contact-form", (req, res) => {
       },
     });
 
+    let output = `
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div
+      style="
+        padding: 10px 0 10px 0;
+        max-width: 600px;
+        background: #b6bad4;
+        text-align: center;
+      "
+    >
+      <img
+        src="https://www.lottierobertsflowers.com/img/logo.jpg"
+        width="150"
+        alt="logo"
+      />
+    </div>
+    <div style="max-width: 600px; background: white">
+      <div style="padding: 10px">
+        <h4>Thank you for your enquiry</h4>
+        <p style="text-align: left">Dear ${req.body.name},</p>
+        <p>Thank you for your enquiry.</p>
+        <p>
+          I will endeavour to reply to you as soon as I can on the details you have provided:
+          <ul>
+          <li>${req.body.email}</li>
+          <li>${req.body.number}</li>
+          </ul>
+          <p>Message<br/>${req.body.message}</p>
+        </p>
+        <p>Kind Regards</p>
+        <p>Nicola</p>
+      </div>
+      <div
+        style="
+          padding: 5px 0 5px 0;
+          max-width: 600px;
+          color: #fff;
+          background: #b6bad4;
+          text-align: center;
+        "
+      >
+        <h5>Place an order: info@lottierobertsflowers.com | 07989 713 742</h5>
+      </div>
+    </div>
+  </body>
+</html>
+    `;
+
     let mailOptions = {
-      from: '"Lottie Roberts Flowers" <info@lottierobertsflowers.com>', // sender address
-      to: req.body.email, // list of receivers
-      subject: "Newsletter", // Subject line
-      text: "Lottie Roberts Flowers enquiry", // plain text body
-      html: "<h1>Form has been submitted</h1>", // html body
+      from: '"Lottie Roberts Flowers" <info@lottierobertsflowers.com>',
+      to: `${req.body.email}, info@lottierobertsflowers.com`,
+      subject: "Enquiry",
+      text: "Lottie Roberts Flowers newsletter registration",
+      html: output,
     };
 
     // send mail with defined transport object
