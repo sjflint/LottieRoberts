@@ -2,6 +2,7 @@ const name = document.getElementById("name");
 const email = document.getElementById("email");
 const number = document.getElementById("number");
 const message = document.getElementById("message");
+const captcha = document.getElementById("captcha");
 const form = document.getElementById("contact-form");
 const errorElement = document.getElementById("error");
 
@@ -24,6 +25,9 @@ form.addEventListener("submit", (e) => {
   if (message.value === "" || message.value == null) {
     messages.push("Please include your message");
   }
+  if (captcha.value !== "10") {
+    messages.push("Incorrect answer");
+  }
 
   if (messages.length > 0) {
     e.preventDefault();
@@ -37,6 +41,7 @@ const modalname = document.getElementById("modalname");
 const modalemail = document.getElementById("modalemail");
 const modalnumber = document.getElementById("modalnumber");
 const modalmessage = document.getElementById("modalmessage");
+const modalcaptcha = document.getElementById("modalcaptcha");
 
 modalForm.addEventListener("submit", (e) => {
   let modalmessages = [];
@@ -60,6 +65,9 @@ modalForm.addEventListener("submit", (e) => {
   if (modalmessage.value === "" || modalmessage.value == null) {
     modalmessages.push("Please include your message");
   }
+  if (modalcaptcha.value !== "10") {
+    modalmessages.push("Incorrect answer");
+  }
 
   if (modalmessages.length > 0) {
     e.preventDefault();
@@ -70,6 +78,7 @@ modalForm.addEventListener("submit", (e) => {
 const newsletterForm = document.getElementById("newsletter-form");
 const newslettername = document.getElementById("newslettername");
 const newsletteremail = document.getElementById("newsletteremail");
+const newslettercaptcha = document.getElementById("newslettercaptcha");
 const newsletterError = document.getElementById("newslettererror");
 
 newsletterForm.addEventListener("submit", (e) => {
@@ -83,6 +92,9 @@ newsletterForm.addEventListener("submit", (e) => {
   ) {
   } else {
     newslettermessages.push("Please include a valid email");
+  }
+  if (newslettercaptcha.value !== "10") {
+    newslettermessages.push("Incorrect answer");
   }
 
   if (newslettermessages.length > 0) {

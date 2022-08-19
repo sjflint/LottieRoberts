@@ -14,24 +14,26 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.post("/newsletter-form", (req, res) => {
-  const sendMail = async () => {
-    let transporter = nodemailer.createTransport({
-      host: "smtp.hostinger.co.uk",
-      port: 587,
-      secure: false, // true for 465, false for other ports
-      auth: {
-        user: process.env.EmailUser,
-        pass: process.env.EmailPass,
-      },
-      tls: {
-        rejectUnauthorized: false,
-      },
-    });
+  console.log(req.body.captcha);
+  if (req.body.captcha === "10") {
+    const sendMail = async () => {
+      let transporter = nodemailer.createTransport({
+        host: "smtp.hostinger.co.uk",
+        port: 587,
+        secure: false, // true for 465, false for other ports
+        auth: {
+          user: process.env.EmailUser,
+          pass: process.env.EmailPass,
+        },
+        tls: {
+          rejectUnauthorized: false,
+        },
+      });
 
-    const randomVoucherCode = Math.floor(1000 + Math.random() * 9000);
-    console.log(randomVoucherCode);
+      const randomVoucherCode = Math.floor(1000 + Math.random() * 9000);
+      console.log(randomVoucherCode);
 
-    let output = `<!DOCTYPE html>
+      let output = `<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -81,43 +83,46 @@ app.post("/newsletter-form", (req, res) => {
   </body>
 </html>`;
 
-    let mailOptions = {
-      from: '"Lottie Roberts Flowers" <info@lottierobertsflowers.com>',
-      to: `${req.body.email}; info@lottierobertsflowers.com`,
-      subject: "Newsletter",
-      text: "Lottie Roberts Flowers newsletter",
-      html: output,
-    };
+      let mailOptions = {
+        from: '"Lottie Roberts Flowers" <info@lottierobertsflowers.com>',
+        to: `${req.body.email}; info@lottierobertsflowers.com`,
+        subject: "Newsletter",
+        text: "Lottie Roberts Flowers newsletter",
+        html: output,
+      };
 
-    // send mail with defined transport object
-    transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-        return console.log(error);
-      }
-      console.log("Message sent: %s", info.messageId);
-      console.log("form submitted");
-      res.redirect("/newslettersuccess.html");
-    });
-  };
-  sendMail();
+      // send mail with defined transport object
+      transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+          return console.log(error);
+        }
+        console.log("Message sent: %s", info.messageId);
+        console.log("form submitted");
+        res.redirect("/newslettersuccess.html");
+      });
+    };
+    sendMail();
+  }
 });
 
 app.post("/contact-form", (req, res) => {
-  const sendMail = async () => {
-    let transporter = nodemailer.createTransport({
-      host: "smtp.hostinger.co.uk",
-      port: 587,
-      secure: false, // true for 465, false for other ports
-      auth: {
-        user: process.env.EmailUser,
-        pass: process.env.EmailPass,
-      },
-      tls: {
-        rejectUnauthorized: false,
-      },
-    });
+  console.log(req.body.captcha);
+  if (req.body.captcha === "10") {
+    const sendMail = async () => {
+      let transporter = nodemailer.createTransport({
+        host: "smtp.hostinger.co.uk",
+        port: 587,
+        secure: false, // true for 465, false for other ports
+        auth: {
+          user: process.env.EmailUser,
+          pass: process.env.EmailPass,
+        },
+        tls: {
+          rejectUnauthorized: false,
+        },
+      });
 
-    let output = `
+      let output = `
     <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -171,26 +176,27 @@ app.post("/contact-form", (req, res) => {
 </html>
     `;
 
-    let mailOptions = {
-      from: '"Lottie Roberts Flowers" <info@lottierobertsflowers.com>',
-      to: `${req.body.email}; info@lottierobertsflowers.com`,
-      subject: "Enquiry",
-      text: "Lottie Roberts Flowers newsletter registration",
-      html: output,
-    };
+      let mailOptions = {
+        from: '"Lottie Roberts Flowers" <info@lottierobertsflowers.com>',
+        to: `${req.body.email}; info@lottierobertsflowers.com`,
+        subject: "Enquiry",
+        text: "Lottie Roberts Flowers newsletter registration",
+        html: output,
+      };
 
-    // send mail with defined transport object
-    transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-        return console.log(error);
-      }
-      console.log("Message sent: %s", info.messageId);
-      console.log("form submitted");
-      res.redirect("/success.html");
-    });
-  };
-  // a change
-  sendMail();
+      // send mail with defined transport object
+      transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+          return console.log(error);
+        }
+        console.log("Message sent: %s", info.messageId);
+        console.log("form submitted");
+        res.redirect("/success.html");
+      });
+    };
+    // a change
+    sendMail();
+  }
 });
 
 // set static folder
