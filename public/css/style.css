@@ -194,7 +194,8 @@ a {
 }
 
 .affiliates-img {
-  width: 200px !important;
+  width: 150px !important;
+  max-height: 150px;
 }
 
 @media (max-width: 800px) {
