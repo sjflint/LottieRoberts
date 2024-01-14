@@ -106,7 +106,6 @@ app.post("/newsletter-form", (req, res) => {
 });
 
 app.post("/contact-form", (req, res) => {
-  console.log(req.body.captcha);
   if (req.body.captcha === "10") {
     const sendMail = async () => {
       let transporter = nodemailer.createTransport({
@@ -191,7 +190,7 @@ app.post("/contact-form", (req, res) => {
         }
         console.log("Message sent: %s", info.messageId);
         console.log("form submitted");
-        res.redirect("/success.html");
+        res.redirect("https://www.lottierobertsflowers.com/success.html");
       });
     };
     // a change
@@ -205,5 +204,3 @@ app.use(express.static(path.join(__dirname, "public")));
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
-
-// test 2
